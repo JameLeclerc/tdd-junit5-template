@@ -23,8 +23,12 @@ class WardrobeTests {
 
 	@Test
 	public void testSize() throws Exception{
-		Wardrobe w = new Wardrobe50();
 		assertEquals(50, w.getSize());
+	}
+
+	@Test
+	public void testPrice() throws Exception{
+		assertEquals(59, w.getPrice());
 	}
 
 }
