@@ -9,7 +9,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class WardrobeTests {
-	private Wardrobe w;
+	private Wardrobe w1;
+	private Wardrobe w2;
+	private Wardrobe w3;
+	private Wardrobe w4;
 
 	@Test
 	public void nothing() throws Exception{
@@ -18,32 +21,24 @@ class WardrobeTests {
 
 	@BeforeEach
 	public void makeWardrobe() throws Exception{
-		w = new Wardrobe50();
+		w1 = new Wardrobe50();
+		w2 = new Wardrobe75();
+		w3 = new Wardrobe100();
+		w4 = new Wardrobe120();
 	}
 
 	@Test
 	public void testSize() throws Exception{
-		assertEquals(50, w.getSize());
+		assertEquals(50, w1.getSize());
 	}
 
 	@Test
 	public void testPrice() throws Exception{
-		assertEquals(59, w.getPrice());
+		assertEquals(59, w1.getPrice());
 	}
 
 	@Test
-	public void makeWardrobe75() throws Exception{
-		Wardrobe w2 = new Wardrobe75();
+	public void testCalc() throws Exception{
+		wardobeCalc wCalc = new wardrobeCalc(w1, w2, w3, w4);
 	}
-
-	@Test
-	public void makeWardrobe100() throws Exception{
-		Wardrobe w3 = new Wardrobe100();
-	}
-
-	@Test
-	public void makeWardrobe120() throws Exception{
-		Wardrobe w4 = new Wardrobe120();
-	}
-
 }
