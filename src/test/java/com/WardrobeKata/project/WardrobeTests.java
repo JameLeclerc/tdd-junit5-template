@@ -2,6 +2,8 @@ package com.WardrobeKata.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -39,6 +41,7 @@ class WardrobeTests {
 
 	@Test
 	public void testCalc() throws Exception{
-		wardobeCalc wCalc = new wardrobeCalc(w1, w2, w3, w4);
+		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4));
+
 	}
 }
