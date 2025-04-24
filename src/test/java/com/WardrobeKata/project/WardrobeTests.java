@@ -31,4 +31,9 @@ class WardrobeTests {
 		assertEquals(59, w.getPrice());
 	}
 
+	@Test
+	public void makeWardrobe75() throws Exception{
+		Wardrobe w2 = new Wardrobe75();
+	}
+
 }
