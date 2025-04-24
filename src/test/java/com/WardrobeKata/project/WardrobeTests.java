@@ -16,7 +16,7 @@ class WardrobeTests {
 
 	@Test
 	public void testWardrobe() throws Exception{
-		Wardrobe w = new Wardrobe();
+		Wardrobe w = new Wardrobe50();
 	}
 	/*
 	@Test

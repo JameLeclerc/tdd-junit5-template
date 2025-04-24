@@ -1,5 +1,5 @@
 package com.WardrobeKata.project;
 
-public class Wardrobe{
+public abstract class Wardrobe{
 
 }
