@@ -41,4 +41,9 @@ class WardrobeTests {
 		Wardrobe w3 = new Wardrobe100();
 	}
 
+	@Test
+	public void makeWardrobe120() throws Exception{
+		Wardrobe w4 = new Wardrobe120();
+	}
+
 }
