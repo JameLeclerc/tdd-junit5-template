@@ -2,6 +2,7 @@ package com.WardrobeKata.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -42,6 +43,13 @@ class WardrobeTests {
 	@Test
 	public void testCalc() throws Exception{
 		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4));
+	}
 
+	@Test
+	public void testComboCalc50() throws Exception{
+		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4));
+		ArrayList<ArrayList<Wardrobe>> knownCombo = new ArrayList<ArrayList<Wardrobe>>();
+		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1)));
+		assertEquals(knownCombo, wCalc.comboCalc());
 	}
 }
