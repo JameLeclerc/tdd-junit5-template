@@ -18,6 +18,12 @@ class WardrobeTests {
 	public void testWardrobe() throws Exception{
 		Wardrobe w = new Wardrobe50();
 	}
+
+	@Test
+	public void testSize() throws Exception{
+		Wardrobe w = new Wardrobe50();
+		assertEquals(50, w.getSize());
+	}
 	/*
 	@Test
 	@DisplayName("1 + 1 = 2")
