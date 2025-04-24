@@ -10,14 +10,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 class WardrobeTests {
 
 	@Test
-	public void nothing() throws Exception{
+	public void nothing(){
 
-	}
-
-
-	@Test
-	public void testWardrobe() throws Exception{
-		Wardrobe w = new Wardrone();
 	}
 	/*
 	@Test
