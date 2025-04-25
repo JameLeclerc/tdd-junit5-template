@@ -26,21 +26,34 @@ public class WardrobeCalc {
                     currCombo.add(wrdbs.get(currInd));
                     currWallSize -= currSize;
                 }
-
                 if(!currCombo.equals(new ArrayList<Wardrobe>())){
                     combos.add(currCombo);
                 }
-
                 currCombo = new ArrayList<Wardrobe>();
                 currWallSize = wallSize;
             }
         }
-
-        return(onlySmallest(combos, wallSize));
+        return(onlyClosest(combos, wallSize));
     }
 
-    private ArrayList<ArrayList<Wardrobe>> onlySmallest(ArrayList<ArrayList<Wardrobe>> combos, int wallSize){
+    private ArrayList<ArrayList<Wardrobe>> onlyClosest(ArrayList<ArrayList<Wardrobe>> combos, int wallSize){
         
+        int closest = findClosestSum(combos, wallSize);
+
+        ArrayList<ArrayList<Wardrobe>> closestCombos = new ArrayList<ArrayList<Wardrobe>>();
+        for(ArrayList<Wardrobe> currCombo : combos){
+            int sum = 0;
+            for(Wardrobe currWrdb : currCombo){
+                sum += currWrdb.getSize();
+            }
+            if(sum == closest){
+                closestCombos.add(currCombo);
+            }
+        }
+        return closestCombos;
+    }
+
+    private int findClosestSum(ArrayList<ArrayList<Wardrobe>> combos, int wallSize){
         int closest = 0;
         int sum;
         for(ArrayList<Wardrobe> currCombo : combos){
@@ -52,18 +65,6 @@ public class WardrobeCalc {
                 closest = sum;
             }
         }
-
-        ArrayList<ArrayList<Wardrobe>> smallestCombos = new ArrayList<ArrayList<Wardrobe>>();
-        for(ArrayList<Wardrobe> currCombo : combos){
-            sum = 0;
-            for(Wardrobe currWrdb : currCombo){
-                sum += currWrdb.getSize();
-            }
-            if(sum == closest){
-                smallestCombos.add(currCombo);
-            }
-        }
-
-        return smallestCombos;
+        return closest;
     }
 }
