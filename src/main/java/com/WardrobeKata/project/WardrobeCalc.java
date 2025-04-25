@@ -2,11 +2,13 @@ package com.WardrobeKata.project;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class WardrobeCalc {
     private ArrayList<Wardrobe> wrdbs;
     public WardrobeCalc(List<Wardrobe> wrdbs){
         this.wrdbs = new ArrayList<Wardrobe>(wrdbs);
+        Collections.sort(this.wrdbs);
     }
 
     public ArrayList<Wardrobe> getWrdbs() {

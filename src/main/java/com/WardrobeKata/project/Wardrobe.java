@@ -1,6 +1,6 @@
 package com.WardrobeKata.project;
 
-public abstract class Wardrobe{
+public abstract class Wardrobe implements Comparable<Wardrobe>{
     private int size;
     private int price;
     public Wardrobe(int size, int price){
@@ -9,4 +9,8 @@ public abstract class Wardrobe{
     }
     public int getSize(){return size;}
     public int getPrice(){return price;}
+
+    public int compareTo(Wardrobe other) {
+        return this.size - other.getSize();
+    }
 }
