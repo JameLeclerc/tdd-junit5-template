@@ -96,14 +96,19 @@ class WardrobeTests {
 
 	@Test
 	public void testComboPriceTotals() throws Exception{
-		ArrayList<ArrayList<Wardrobe>> testCombos = wCalc.combosCalc(250);
-		ArrayList<Integer> priceTotals = wCalc.calcPriceTotals();
+		ArrayList<Integer> priceTotals = wCalc.calcPriceTotals(250);
 		if(!priceTotals.contains(295)){
 			throw new Exception("Does not contain expected price");
 		}
 		if(!priceTotals.contains(239)){
 			throw new Exception("Does not contain expected price");
 		}
+	}
+
+	@Test
+	public void testEmptyCombos() throws Exception{
+		WardrobeCalc uniquCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4));
+		ArrayList<Integer> priceTotals = wCalc.calcPriceTotals(100);
 	}
 
 	@Test
