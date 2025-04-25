@@ -76,6 +76,26 @@ class WardrobeTests {
 	}
 
 	@Test
+	public void testNewWardrobe() throws Exception{
+		Wardrobe w5 = new Wardrobe(25, 20){};
+		WardrobeCalc uniqCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4, w5));
+		ArrayList<ArrayList<Wardrobe>> testCombos = uniqCalc.combosCalc(250);
+		if(!testCombos.contains(new ArrayList<Wardrobe>(Arrays.asList(w5, w5, w5, w5, w5, w5, w5, w5, w5, w5)))){
+			throw new Exception("Does not contain expected ArrayList");
+		}
+		if(!testCombos.contains(new ArrayList<Wardrobe>(Arrays.asList(w2, w2, w2, w5)))){
+			throw new Exception("Does not contain expected ArrayList");
+		}
+		if(!testCombos.contains(new ArrayList<Wardrobe>(Arrays.asList(w3, w3, w1)))){
+			throw new Exception("Does not contain expected ArrayList");
+		}
+		if(!testCombos.contains(new ArrayList<Wardrobe>(Arrays.asList(w1, w1, w1, w1, w1)))){
+			throw new Exception("Does not contain expected ArrayList");
+		}
+	}
+
+
+	@Test
 	public void testComboCalcOrder() throws Exception{
 		WardrobeCalc randCalc = new WardrobeCalc(Arrays.asList(w1, w3, w2, w4));
 		ArrayList<Wardrobe> knownOrder = new ArrayList<Wardrobe>();
