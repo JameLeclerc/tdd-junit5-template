@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class WardrobeCalc {
-    private List<Wardrobe> wrdbs;
+    private ArrayList<Wardrobe> wrdbs;
     public WardrobeCalc(List<Wardrobe> wrdbs){
         this.wrdbs = new ArrayList<Wardrobe>(wrdbs);
+    }
+
+    public ArrayList<Wardrobe> getWrdbs() {
+        return wrdbs;
     }
 
     public ArrayList<ArrayList<Wardrobe>> combosCalc(int wallSize){
