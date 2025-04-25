@@ -51,19 +51,19 @@ class WardrobeTests {
 
 	@Test
 	public void testComboCalc100() throws Exception{
-		ArrayList<ArrayList<Wardrobe>> knownCombo = new ArrayList<ArrayList<Wardrobe>>();
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w3)));
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1)));
-		assertEquals(knownCombo, wCalc.combosCalc(100));
+		ArrayList<ArrayList<Wardrobe>> knownCombos = new ArrayList<ArrayList<Wardrobe>>();
+		knownCombos.add(new ArrayList<Wardrobe>(Arrays.asList(w3)));
+		knownCombos.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1)));
+		assertEquals(knownCombos, wCalc.combosCalc(100));
 	}
 
 	@Test
 	public void testComboCalc150() throws Exception{
-		ArrayList<ArrayList<Wardrobe>> knownCombo = new ArrayList<ArrayList<Wardrobe>>();
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w3, w1)));
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w2, w2)));
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1, w1)));
-		assertEquals(knownCombo, wCalc.combosCalc(150));
+		ArrayList<ArrayList<Wardrobe>> knownCombos = new ArrayList<ArrayList<Wardrobe>>();
+		knownCombos.add(new ArrayList<Wardrobe>(Arrays.asList(w3, w1)));
+		knownCombos.add(new ArrayList<Wardrobe>(Arrays.asList(w2, w2)));
+		knownCombos.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1, w1)));
+		assertEquals(knownCombos, wCalc.combosCalc(150));
 	}
 
 	@Test
