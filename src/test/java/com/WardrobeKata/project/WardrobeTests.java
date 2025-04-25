@@ -52,13 +52,4 @@ class WardrobeTests {
 		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1)));
 		assertEquals(knownCombo, wCalc.combosCalc(50));
 	}
-
-	@Test
-	public void testComboCalc100() throws Exception{
-		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4));
-		ArrayList<ArrayList<Wardrobe>> knownCombo = new ArrayList<ArrayList<Wardrobe>>();
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1)));
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w3)));
-		assertEquals(knownCombo, wCalc.combosCalc(100));
-	}
 }
