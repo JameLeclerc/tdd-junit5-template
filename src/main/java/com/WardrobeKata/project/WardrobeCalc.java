@@ -6,6 +6,12 @@ import java.util.Collections;
 
 public class WardrobeCalc {
     private ArrayList<Wardrobe> wrdbs;
+    
+    private ArrayList<ArrayList<Wardrobe>> combos;
+    private ArrayList<Wardrobe> currCombo; 
+    private int wallSize;
+    private int currWallSize;
+    
     public WardrobeCalc(List<Wardrobe> wrdbs){
         this.wrdbs = new ArrayList<Wardrobe>(wrdbs);
         Collections.sort(this.wrdbs);
@@ -24,12 +30,6 @@ public class WardrobeCalc {
         genCombos(0);
         return(onlyClosest());
     }
-
-
-    private ArrayList<ArrayList<Wardrobe>> combos;
-    private ArrayList<Wardrobe> currCombo; 
-    private int wallSize;
-    private int currWallSize;
     
     private void genCombos(int currWrdbInd){
         int currWrdbSize = wrdbs.get(currWrdbInd).getSize();
@@ -58,10 +58,7 @@ public class WardrobeCalc {
         int closest = findClosestSum();
         ArrayList<ArrayList<Wardrobe>> closestCombos = new ArrayList<ArrayList<Wardrobe>>();
         for(ArrayList<Wardrobe> currCombo : combos){
-            int sum = 0;
-            for(Wardrobe currWrdb : currCombo){
-                sum += currWrdb.getSize();
-            }
+            int sum = sumCombo(currCombo);
             if(sum == closest){
                 closestCombos.add(currCombo);
             }
@@ -73,14 +70,19 @@ public class WardrobeCalc {
         int closest = 0;
         int sum;
         for(ArrayList<Wardrobe> currCombo : combos){
-            sum = 0;
-            for(Wardrobe currWrdb : currCombo){
-                sum += currWrdb.getSize();
-            }
+            sum = sumCombo(currCombo);
             if(wallSize - sum < wallSize - closest){
                 closest = sum;
             }
         }
         return closest;
+    }
+
+    private int sumCombo(ArrayList<Wardrobe> combo){
+        int sum = 0;
+        for(Wardrobe currWrdb : combo){
+            sum += currWrdb.getSize();
+        }
+        return sum;
     }
 }
