@@ -11,6 +11,6 @@ public abstract class Wardrobe implements Comparable<Wardrobe>{
     public int getPrice(){return price;}
 
     public int compareTo(Wardrobe other) {
-        return this.size - other.getSize();
+        return other.getSize() - this.size;
     }
 }

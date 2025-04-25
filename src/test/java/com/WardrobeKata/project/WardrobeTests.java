@@ -57,8 +57,8 @@ class WardrobeTests {
 	public void testComboCalc100() throws Exception{
 		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w2, w3, w4));
 		ArrayList<ArrayList<Wardrobe>> knownCombo = new ArrayList<ArrayList<Wardrobe>>();
-		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1)));
 		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w3)));
+		knownCombo.add(new ArrayList<Wardrobe>(Arrays.asList(w1, w1)));
 		assertEquals(knownCombo, wCalc.combosCalc(100));
 	}
 
@@ -66,10 +66,10 @@ class WardrobeTests {
 	public void testComboCalcOrder() throws Exception{
 		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w3, w2, w4));
 		ArrayList<Wardrobe> knownOrder = new ArrayList<Wardrobe>();
-		knownOrder.add(w1);
-		knownOrder.add(w2);
-		knownOrder.add(w3);
 		knownOrder.add(w4);
+		knownOrder.add(w3);
+		knownOrder.add(w2);
+		knownOrder.add(w1);
 		assertEquals(knownOrder, wCalc.getWrdbs());
 	}
 
