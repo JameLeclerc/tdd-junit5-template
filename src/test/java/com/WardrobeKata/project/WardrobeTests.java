@@ -56,8 +56,11 @@ class WardrobeTests {
 	@Test
 	public void testComboCalcOrder() throws Exception{
 		WardrobeCalc wCalc = new WardrobeCalc(Arrays.asList(w1, w3, w2, w4));
-		ArrayList<ArrayList<Wardrobe>> knownOrder = new ArrayList<ArrayList<Wardrobe>>();
-		knownOrder.add(new ArrayList<Wardrobe>(Arrays.asList(w4, w3, w2, w1)));
+		ArrayList<Wardrobe> knownOrder = new ArrayList<Wardrobe>();
+		knownOrder.add(w1);
+		knownOrder.add(w2);
+		knownOrder.add(w3);
+		knownOrder.add(w4);
 		assertEquals(knownOrder, wCalc.getWrdbs());
 	}
 
