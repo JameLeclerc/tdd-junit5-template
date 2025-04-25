@@ -87,7 +87,8 @@ public class WardrobeCalc {
         return sum;
     }
 
-    public ArrayList<Integer> calcPriceTotals(){
+    public ArrayList<Integer> calcPriceTotals(int wallSize){
+        combosCalc(wallSize);
         ArrayList<Integer> totals = new ArrayList<Integer>();
         int sum;
         for(ArrayList<Wardrobe> currCombo : combos){
