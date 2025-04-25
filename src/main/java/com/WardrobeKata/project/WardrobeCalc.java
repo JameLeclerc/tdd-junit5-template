@@ -11,7 +11,7 @@ public class WardrobeCalc {
     private ArrayList<Wardrobe> currCombo; 
     private int wallSize;
     private int currWallSize;
-    
+
     public WardrobeCalc(List<Wardrobe> wrdbs){
         this.wrdbs = new ArrayList<Wardrobe>(wrdbs);
         Collections.sort(this.wrdbs);
@@ -28,7 +28,8 @@ public class WardrobeCalc {
         this.wallSize = wallSize;
         this.currWallSize = wallSize;
         genCombos(0);
-        return(onlyClosest());
+        combos = onlyClosest();
+        return(combos);
     }
     
     private void genCombos(int currWrdbInd){
@@ -84,5 +85,17 @@ public class WardrobeCalc {
             sum += currWrdb.getSize();
         }
         return sum;
+    }
+
+    public ArrayList<Integer> calcPriceTotals(){
+        ArrayList<Integer> totals = new ArrayList<Integer>();
+        int sum;
+        for(ArrayList<Wardrobe> currCombo : combos){
+            sum = 0;
+            for(Wardrobe currWrdb : currCombo)
+                sum += currWrdb.getPrice();
+            totals.add(sum);
+        }
+        return totals;
     }
 }
