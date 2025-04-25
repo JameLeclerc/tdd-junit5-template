@@ -97,7 +97,7 @@ class WardrobeTests {
 	@Test
 	public void testComboPriceTotals() throws Exception{
 		ArrayList<ArrayList<Wardrobe>> testCombos = wCalc.combosCalc(250);
-		ArrayList<int> priceTotals = wCalc.calcPriceTotals();
+		ArrayList<Integer> priceTotals = wCalc.calcPriceTotals();
 		if(!priceTotals.contains(295)){
 			throw new Exception("Does not contain expected price");
 		}
